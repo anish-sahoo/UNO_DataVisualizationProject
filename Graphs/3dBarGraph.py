@@ -37,6 +37,6 @@ ax1.bar3d(x, y, z, dx, dy, dz, color = color)
 # setting axes labels
 ax1.set_xlabel('Country')
 ax1.set_ylabel('Years')
-ax1.set_zlabel('Minimum Employment Age')
+ax1.set_zlabel('Age')
 
 plt.show()
