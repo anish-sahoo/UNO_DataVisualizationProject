@@ -23,11 +23,9 @@ def click1():
    disp = customtkinter.CTkLabel(root, text=" A seperate window is now displaying Graph 1", font=("Ariel", 20))
    disp.grid(row=1, column=4, padx= 10)
 
-
 def click2():
    disp2 = customtkinter.CTkLabel(root, text=" A seperate window is now displaying Graph 2", font=("Ariel", 20))
    disp2.grid(row=1, column=4, padx=10)
-
 
 def click3():
     disp3 = customtkinter.CTkLabel(root, text=" A seperate window is now displaying Graph 3", font=("Ariel", 20))
