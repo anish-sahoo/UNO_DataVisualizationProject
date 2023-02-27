@@ -5,13 +5,13 @@ from matplotlib import pyplot as plt
 def show_graph_1(fsize, color):
     plt.rcParams["figure.autolayout"] = True
     columns = ["minage_light_leg_12"]
-    df = pd.read_csv("childlabour_6Feb2019CSVversion.csv", usecols=columns)
+    df = pd.read_csv("../../Downloads/childlabour_6Feb2019CSVversion.csv", usecols=columns)
     cl = ['green', 'red', 'gray']  # default
 
-    if color == 0:
-        cl = ['green', 'red', 'gray']  # default
-    elif color == 1:
-        cl = ['#004C83', '#A27A01', '#7D7D7D']  # deuteranopia
+    if color == 1 or color == 2:
+        cl = ['#004C83', '#A27A01', '#7D7D7D']  # deuteranopia/protanopia
+    elif color == 3:
+        cl = ['#68CCEE', '#EE3168', '#7D7D7D']  # tritanopia
 
     a = df.minage_light_leg_12.to_list()
     b = [0, 0, 0]  # counters for yes, no and unknown
@@ -25,9 +25,9 @@ def show_graph_1(fsize, color):
 
     c = ['Yes', 'No', 'Unknown']
     plt.bar(c, b, color=cl)
-
-    plt.rcParams["figure.figsize"] = [10.00, 8.00]
+    plt.autoscale(enable=True)
+    # plt.rcParams["figure.figsize"] = (20, 18)
     plt.xticks(fontsize=fsize)
     plt.yticks(fontsize=fsize)
-    plt.xlabel('Minimum Working Age', fontsize=fsize + 10)
+    plt.xlabel('Minimum Working Age', fontsize=fsize + 2, color='gray')
     plt.show()
