@@ -1,5 +1,14 @@
-import customtkinter
 from minage_lightwork import show_graph_1
+import os
+
+try:
+    import customtkinter
+except ImportError:
+    os.system('pip install customtkinter')
+    import customtkinter
+
+
+
 
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("dark-blue")

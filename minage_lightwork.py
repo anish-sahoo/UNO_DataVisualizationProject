@@ -1,11 +1,19 @@
-import pandas as pd
-from matplotlib import pyplot as plt
+import os
+
+try:
+    import pandas as pd
+    from matplotlib import pyplot as plt
+except ImportError:
+    os.system('pip install pandas')
+    os.system('pip install matplotlib')
+    import pandas as pd
+    from matplotlib import pyplot as plt
 
 
 def show_graph_1(fsize, color):
     plt.rcParams["figure.autolayout"] = True
     columns = ["minage_light_leg_12"]
-    df = pd.read_csv("../../Downloads/childlabour_6Feb2019CSVversion.csv", usecols=columns)
+    df = pd.read_csv("childlabour_6Feb2019CSVversion.csv", usecols=columns)
     cl = ['green', 'red', 'gray']  # default
 
     if color == 1 or color == 2:
@@ -15,6 +23,7 @@ def show_graph_1(fsize, color):
 
     a = df.minage_light_leg_12.to_list()
     b = [0, 0, 0]  # counters for yes, no and unknown
+
     for i in range(len(a)):
         if a[i] == 'Yes':
             b[0] += 1
@@ -26,8 +35,8 @@ def show_graph_1(fsize, color):
     c = ['Yes', 'No', 'Unknown']
     plt.bar(c, b, color=cl)
     plt.autoscale(enable=True)
-    # plt.rcParams["figure.figsize"] = (20, 18)
     plt.xticks(fontsize=fsize)
     plt.yticks(fontsize=fsize)
     plt.xlabel('Minimum Working Age', fontsize=fsize + 2, color='gray')
+
     plt.show()
