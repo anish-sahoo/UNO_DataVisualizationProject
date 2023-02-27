@@ -11,7 +11,8 @@ except ImportError:
 
 
 def show_graph_1(fsize, color):
-    plt.rcParams["figure.autolayout"] = True
+    #plt.rcParams["figure.autolayout"] = True
+    plt.rcParams["figure.figsize"] = (10, 8)
     columns = ["minage_light_leg_12"]
     df = pd.read_csv("childlabour_6Feb2019CSVversion.csv", usecols=columns)
     cl = ['green', 'red', 'gray']  # default
@@ -37,6 +38,6 @@ def show_graph_1(fsize, color):
     plt.autoscale(enable=True)
     plt.xticks(fontsize=fsize)
     plt.yticks(fontsize=fsize)
-    plt.xlabel('Minimum Working Age', fontsize=fsize + 2, color='gray')
+    plt.xlabel('Do laws protect hours of light work?', fontsize=fsize - 4, color='gray')
 
     plt.show()

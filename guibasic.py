@@ -1,4 +1,5 @@
 from minage_lightwork import show_graph_1
+from minage_genage import show_graph_2
 import os
 
 try:
@@ -15,7 +16,7 @@ customtkinter.set_default_color_theme("dark-blue")
 
 root = customtkinter.CTk()
 root.title("Graph Viewer (Millard North Team 1)")
-root.geometry("1050x500")
+root.geometry("1300x600")
 root.resizable(False, False)
 
 color_blindness_index = 0
@@ -38,7 +39,7 @@ def click1():
 def click2():
     disp2 = customtkinter.CTkLabel(root, text=" A separate window is now displaying Graph 2", font=("Ariel", 20))
     disp2.grid(row=1, column=4, padx=10)
-    # show_graph_2(slider.get(), color_blindness_index)
+    show_graph_2(slider.get(), color_blindness_index)
 
 
 def click3():
@@ -144,7 +145,7 @@ cbm1.grid(row=5, column=1, padx=10, pady=10)
 cbm2 = customtkinter.CTkButton(master=root, text="Protanopia", command=colormode_update2, font=("Ariel", 20), height=50,
                                width=150, hover_color='#00243d')
 cbm2.grid(row=5, column=2, padx=10, pady=10)
-cbm3 = customtkinter.CTkButton(master=root, text="Tritanopia", command=colormode_update3, font=("Ariel", 20), height=50,
+cbm3 = customtkinter.CTkButton(master=root, text=" Tritanopia ", command=colormode_update3, font=("Ariel", 20), height=50,
                                width=150, hover_color='#EE3168')
 cbm3.grid(row=6, column=1, padx=10, pady=10)
 cbmd = customtkinter.CTkButton(master=root, text="Default", command=defaultcmode, font=("Ariel", 20), height=50,
