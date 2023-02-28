@@ -12,7 +12,7 @@ except ImportError:
 
 def show_graph_3(fsize, color):
 
-    plt.rcParams["figure.autolayout"] = True
+    plt.rcParams["figure.figsize"] = (14, 9)
     columns = ["overtime_proh_1_12"]
     df = pd.read_csv("childlabour_6Feb2019CSVversion.csv", usecols=columns)
     cl = ['green', 'red', 'gray']  # default
@@ -37,7 +37,7 @@ def show_graph_3(fsize, color):
     plt.barh(c, b, color=cl)
     plt.autoscale(enable=True)
     plt.xticks(fontsize=fsize)
-    plt.yticks(fontsize=fsize)
-    plt.xlabel('Countries restricting overtime for children', fontsize=fsize + 2, color='gray')
+    plt.yticks(fontsize=fsize, rotation=45)
+    plt.xlabel('Do Countries restrict overtime for children?', fontsize=fsize + 2, color='gray')
 
     plt.show()

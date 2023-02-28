@@ -12,7 +12,8 @@ except ImportError:
 
 def show_graph_4(fsize, color):
 
-    plt.rcParams["figure.autolayout"] = True
+    #plt.rcParams["figure.autolayout"] = True
+    plt.rcParams["figure.figsize"] = (15, 9)
     columns = ["night_proh_1_12"]
     df = pd.read_csv("childlabour_6Feb2019CSVversion.csv", usecols=columns)
     cl = ['green', 'red', 'gray']  # default
@@ -37,7 +38,7 @@ def show_graph_4(fsize, color):
     plt.barh(c, b, color=cl)
     plt.autoscale(enable=True)
     plt.xticks(fontsize=fsize)
-    plt.yticks(fontsize=fsize)
-    plt.xlabel('Countries restricting nightime work for children', fontsize=fsize + 2, color='gray')
+    plt.yticks(fontsize=fsize, rotation=45)
+    plt.xlabel('Do Countries restrict nightime work for children?', fontsize=fsize + 2, color='gray')
 
     plt.show()
