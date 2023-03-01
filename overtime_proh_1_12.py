@@ -11,8 +11,8 @@ except ImportError:
 
 
 def show_graph_3(fsize, color):
-
-    plt.rcParams["figure.figsize"] = (14, 9)
+    plt.rcParams["figure.autolayout"] = True
+    plt.rcParams["figure.figsize"] = (14, 7)
     columns = ["overtime_proh_1_12"]
     df = pd.read_csv("childlabour_6Feb2019CSVversion.csv", usecols=columns)
     cl = ['green', 'red', 'gray']  # default

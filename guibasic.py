@@ -2,6 +2,8 @@ from minage_lightwork import show_graph_1
 from minage_genage import show_graph_2
 from overtime_proh_1_12 import show_graph_3
 from night_proh_1_12 import show_graph_4
+from restweek_hrs import show_graph_5
+from minimumage_progress import show_graph_6
 
 import os
 
@@ -16,7 +18,7 @@ customtkinter.set_default_color_theme("dark-blue")
 
 root = customtkinter.CTk()
 root.title("Graph Viewer (Millard North Team 1)")
-root.geometry("1300x600")
+root.geometry("1300x750")
 root.resizable(False, False)
 
 color_blindness_index = 0
@@ -68,7 +70,7 @@ def click5():
     disp.configure(text='A separate window is\nnow displaying Graph 5')
     # disp5 = customtkinter.CTkLabel(root, text=" A separate window is\nnow displaying Graph 5", font=("Ariel", 20))
     # disp5.grid(row=1, column=4, padx=10)
-    # show_graph_5(slider.get(), color_blindness_index)
+    show_graph_5(slider.get(), color_blindness_index)
 
 
 def click6():
@@ -76,15 +78,16 @@ def click6():
     disp.configure(text='A separate window is\nnow displaying Graph 6')
     # disp6 = customtkinter.CTkLabel(root, text=" A separate window is\nnow displaying Graph 6", font=("Ariel", 20))
     # disp6.grid(row=1, column=4, padx=10)
-    # show_graph_6(slider.get(), color_blindness_index)
+    show_graph_6(slider.get(), color_blindness_index)
 
 
 # functions to change color mode, change graph color variables with these functions
 def colormode_update1():
     global colormode_label
-    colormode_label = customtkinter.CTkLabel(root, text="      Color mode set to DEUTERANOPIA", font=("Ariel", 20),
+    colormode_label.configure(text="")
+    colormode_label = customtkinter.CTkLabel(root, text="Color mode set\nto DEUTERANOPIA", font=("Ariel", 20),
                                              text_color='#A27A01')
-    colormode_label.grid(row=5, column=4)
+    colormode_label.grid(row=5, column=4, padx=10)
     global color_blindness_index
     color_blindness_index = 1
 
@@ -94,9 +97,10 @@ def colormode_update1():
 
 def colormode_update2():
     global colormode_label
-    colormode_label = customtkinter.CTkLabel(root, text="      Color mode set to PROTANOPIA   ", font=("Ariel", 20),
+    colormode_label.configure(text="")
+    colormode_label = customtkinter.CTkLabel(root, text="Color mode set\nto PROTANOPIA", font=("Ariel", 20),
                                              text_color='#008ff5')
-    colormode_label.grid(row=5, column=4)
+    colormode_label.grid(row=5, column=4, padx=10)
     global color_blindness_index
     color_blindness_index = 2
 
@@ -106,9 +110,10 @@ def colormode_update2():
 
 def colormode_update3():
     global colormode_label
-    colormode_label = customtkinter.CTkLabel(root, text="      Color mode set to TRITANOPIA      ", font=("Ariel", 20),
+    colormode_label.configure(text="")
+    colormode_label = customtkinter.CTkLabel(root, text="Color mode set\nto TRITANOPIA", font=("Ariel", 20),
                                              text_color='#EE3168')
-    colormode_label.grid(row=5, column=4)
+    colormode_label.grid(row=5, column=4, padx=10)
     global color_blindness_index
     color_blindness_index = 3
 
@@ -117,14 +122,16 @@ def colormode_update3():
 
 
 def defaultcmode():
-    cmmd = customtkinter.CTkLabel(root, text="      Color mode set to DEFAULT       ", font=("Ariel", 20))
-    cmmd.grid(row=5, column=4)
+    global colormode_label
+    colormode_label.configure(text="")
+    colormode_label = customtkinter.CTkLabel(root, text="Color mode set\nto DEFAULT", font=("Ariel", 20))
+    colormode_label.grid(row=5, column=4, padx=10)
     global color_blindness_index
     color_blindness_index = 0
 
 
-colormode_label = customtkinter.CTkLabel(root, text="      Color mode set to DEFAULT       ", font=("Ariel", 20))
-colormode_label.grid(row=5, column=4)
+colormode_label = customtkinter.CTkLabel(root, text="Color mode set\nto DEFAULT", font=("Ariel", 20))
+colormode_label.grid(row=5, column=4, padx=10)
 
 # graph button header
 viewg = customtkinter.CTkLabel(root, text="Select graph to view:", font=("Ariel", 20))
@@ -143,32 +150,34 @@ g3.grid(row=2, column=1, padx=10, pady=10, sticky="ewns")
 g4 = customtkinter.CTkButton(root, text="Nighttime work\nrestrictions for children", command=click4, font=("Ariel", 20),
                              height=50, width=150, fg_color='green')
 g4.grid(row=0, column=2, padx=10, pady=10, sticky="ewns")
-g5 = customtkinter.CTkButton(root, text="Graph 5", command=click5, font=("Ariel", 20), height=50, width=150,
+g5 = customtkinter.CTkButton(root, text="Hours of Rest\nguaranteed by the\nGovernment per week", command=click5, font=("Ariel", 20), height=50, width=150,
                              fg_color='green')
 g5.grid(row=1, column=2, padx=10, pady=10, sticky="ewns")
-g6 = customtkinter.CTkButton(root, text="Graph 6", command=click6, font=("Ariel", 20), height=50, width=150,
+g6 = customtkinter.CTkButton(root, text="Change in Average\nMinimum Age for\nwork over the\nperiod 1995-2012", command=click6, font=("Ariel", 20), height=50, width=150,
                              fg_color='green')
 g6.grid(row=2, column=2, padx=10, pady=10, sticky="ewns")
 
 # color buttons header
-cbfunct = customtkinter.CTkLabel(root, text="Set color mode:", font=("Ariel", 20))
-cbfunct.grid(row=5, column=0, padx=15)
+cbfunct = customtkinter.CTkLabel(root, text="Set color mode\nfor color-blindness:", font=("Ariel", 20))
+cbfunct.grid(row=5, column=0, padx=15, pady=10)
+
+filler_a = customtkinter.CTkLabel(root, text="        \n      ", font=("Ariel", 20))
+filler_a.grid(row=6, column=0, padx=15, pady=10)
 
 filler = customtkinter.CTkLabel(master=root, text="                   ")
 filler.grid(row=4, column=2)
 
 # buttons (change color on click?)
-cbm1 = customtkinter.CTkButton(master=root, text="Deuteranopia", command=colormode_update1, font=("Ariel", 20),
+cbm1 = customtkinter.CTkButton(master=root, text="Deuteranopia", command=colormode_update1, font=("Ariel", 24),
                                height=50, width=150, hover_color='#A27A01')  # command=cbmode1
 cbm1.grid(row=5, column=1, padx=10, pady=10, sticky="ewns")
-cbm2 = customtkinter.CTkButton(master=root, text="Protanopia", command=colormode_update2, font=("Ariel", 20), height=50,
+cbm2 = customtkinter.CTkButton(master=root, text="Protanopia", command=colormode_update2, font=("Ariel", 24), height=50,
                                width=150, hover_color='#00243d')
 cbm2.grid(row=5, column=2, padx=10, pady=10, sticky="ewns")
-cbm3 = customtkinter.CTkButton(master=root, text=" Tritanopia ", command=colormode_update3, font=("Ariel", 20),
-                               height=50,
-                               width=150, hover_color='#EE3168')
+cbm3 = customtkinter.CTkButton(master=root, text=" Tritanopia ", command=colormode_update3, font=("Ariel", 24),
+                               height=50, width=150, hover_color='#EE3168')
 cbm3.grid(row=6, column=1, padx=10, pady=10, sticky="ewns")
-cbmd = customtkinter.CTkButton(master=root, text="Default", command=defaultcmode, font=("Ariel", 20), height=50,
+cbmd = customtkinter.CTkButton(master=root, text="Default", command=defaultcmode, font=("Ariel", 24), height=50,
                                width=150, hover_color='#7D7D7D')  # command=defaultcmode
 cbmd.grid(row=6, column=2, padx=10, pady=10, sticky="ewns")
 
