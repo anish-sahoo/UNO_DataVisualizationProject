@@ -16,7 +16,7 @@ def show_graph_5(fsize, color):
     plt.rcParams["figure.subplot.bottom"] = 0.2
     plt.rcParams["figure.subplot.right"] = 0.86
     columns = ["restweek_hrs_12"]
-    df = pd.read_csv("../../Downloads/UNO_DataVisualizationProject-main/childlabour_6Feb2019CSVversion.csv", usecols=columns)
+    df = pd.read_csv("childlabour_6Feb2019CSVversion.csv", usecols=columns)
 
     cl = ['green', 'red', 'gray', 'black']  # default
     if color == 1 or color == 2:

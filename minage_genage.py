@@ -14,7 +14,7 @@ def show_graph_2(fsize, color):
     plt.rcParams["figure.autolayout"] = True
     plt.rcParams["figure.figsize"] = (10, 7)
     columns = ["minage_gen_age_12"]
-    df = pd.read_csv("../../Downloads/UNO_DataVisualizationProject-main/childlabour_6Feb2019CSVversion.csv", usecols=columns)
+    df = pd.read_csv("childlabour_6Feb2019CSVversion.csv", usecols=columns)
     cl = ['green', 'red', 'green', 'red', 'green', 'red', 'green']  # default
 
     if color == 1 or color == 2:
