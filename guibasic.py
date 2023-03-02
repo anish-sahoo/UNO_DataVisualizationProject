@@ -18,7 +18,7 @@ customtkinter.set_default_color_theme("dark-blue")
 
 root = customtkinter.CTk()
 root.title("Graph Viewer (Millard North Team 1)")
-root.geometry("1300x750")
+root.geometry("1000x600")  # If running this code on Linux with Wayland graphics, use "1300x650" instead of "1000x600"
 root.resizable(False, False)
 
 color_blindness_index = 0
@@ -150,10 +150,12 @@ g3.grid(row=2, column=1, padx=10, pady=10, sticky="ewns")
 g4 = customtkinter.CTkButton(root, text="Nighttime work\nrestrictions for children", command=click4, font=("Ariel", 20),
                              height=50, width=150, fg_color='green')
 g4.grid(row=0, column=2, padx=10, pady=10, sticky="ewns")
-g5 = customtkinter.CTkButton(root, text="Hours of Rest\nguaranteed by the\nGovernment per week", command=click5, font=("Ariel", 20), height=50, width=150,
+g5 = customtkinter.CTkButton(root, text="Hours of Rest\nguaranteed by the\nGovernment per week", command=click5,
+                             font=("Ariel", 20), height=50, width=150,
                              fg_color='green')
 g5.grid(row=1, column=2, padx=10, pady=10, sticky="ewns")
-g6 = customtkinter.CTkButton(root, text="Change in Average\nMinimum Age for\nwork over the\nperiod 1995-2012", command=click6, font=("Ariel", 20), height=50, width=150,
+g6 = customtkinter.CTkButton(root, text="Change in Average\nMinimum Age for\nwork over the\nperiod 1995-2012",
+                             command=click6, font=("Ariel", 20), height=50, width=150,
                              fg_color='green')
 g6.grid(row=2, column=2, padx=10, pady=10, sticky="ewns")
 

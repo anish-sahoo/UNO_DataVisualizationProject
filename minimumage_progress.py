@@ -23,7 +23,7 @@ def show_graph_6(fsize, color):
                "minage_gen_age_07", "minage_gen_age_08", "minage_gen_age_09", "minage_gen_age_10",
                "minage_gen_age_11", "minage_gen_age_12"]
 
-    df = pd.read_csv("childlabour_6Feb2019CSVversion.csv", usecols=columns)
+    df = pd.read_csv("../../Downloads/UNO_DataVisualizationProject-main/childlabour_6Feb2019CSVversion.csv", usecols=columns)
     list_of_columns = []
 
     list_of_columns.append(df.minage_gen_age_95.to_list())
