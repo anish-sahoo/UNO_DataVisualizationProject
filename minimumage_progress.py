@@ -76,5 +76,5 @@ def show_graph_6(fsize, color):
     plt.xticks(fontsize=fsize)
     plt.yticks(fontsize=fsize)
     plt.xlabel('Change in average minimum working age\nfor children over the years', fontsize=fsize - 4, color='gray')
-
+    plt.ylabel('Age', fontsize=fsize - 4, color='gray')
     plt.show()

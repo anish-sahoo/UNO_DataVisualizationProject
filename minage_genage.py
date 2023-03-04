@@ -12,7 +12,7 @@ except ImportError:
 
 def show_graph_2(fsize, color):
     plt.rcParams["figure.autolayout"] = True
-    plt.rcParams["figure.figsize"] = (10, 7)
+    plt.rcParams["figure.figsize"] = (11, 7)
     columns = ["minage_gen_age_12"]
     df = pd.read_csv("childlabour_6Feb2019CSVversion.csv", usecols=columns)
     cl = ['green', 'red', 'green', 'red', 'green', 'red', 'green']  # default
@@ -46,5 +46,6 @@ def show_graph_2(fsize, color):
     plt.xticks(fontsize=fsize)
     plt.yticks(fontsize=fsize)
     plt.xlabel('Minimum Working Age enforced by Laws', fontsize=fsize + 2, color='gray')
+    plt.ylabel('Count', fontsize=fsize - 4, color='gray')
 
     plt.show()

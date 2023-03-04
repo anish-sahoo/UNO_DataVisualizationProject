@@ -12,7 +12,7 @@ except ImportError:
 
 def show_graph_1(fsize, color):
     plt.rcParams["figure.autolayout"] = True
-    plt.rcParams["figure.figsize"] = (10, 7)
+    plt.rcParams["figure.figsize"] = (11, 7)
     columns = ["minage_light_leg_12"]
     df = pd.read_csv("childlabour_6Feb2019CSVversion.csv", usecols=columns)
     cl = ['green', 'red', 'gray']  # default
@@ -39,5 +39,6 @@ def show_graph_1(fsize, color):
     plt.xticks(fontsize=fsize)
     plt.yticks(fontsize=fsize)
     plt.xlabel('Do laws restrict hours of light work for children?', fontsize=fsize - 4, color='gray')
+    plt.ylabel('Count', fontsize=fsize-4, color='gray')
 
     plt.show()
